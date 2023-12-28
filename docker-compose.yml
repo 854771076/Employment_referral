@@ -1,0 +1,81 @@
+version: "3"
+
+volumes: # 自定义数据卷
+  db_vol: #定义数据卷同步存放容器内mysql数据
+  redis_vol: #定义数据卷同步存放redis数据
+  media_vol: #定义数据卷同步存放web项目用户上传到media文件夹的数据
+  static_vol: #定义数据卷同步存放web项目static文件夹的数据
+
+networks: # 自定义网络(默认桥接), 不使用links通信
+  nginx_network:
+    driver: bridge
+  db_network:
+    driver: bridge
+  redis_network: 
+    driver: bridge
+
+services:
+  redis:
+    image: redis:latest
+    command: redis-server /etc/redis/redis.conf # 容器启动后启动redis服务器
+    networks:
+      - redis_network
+    volumes:
+      - redis_vol:/data # 通过挂载给redis数据备份
+      - ./compose/redis/redis.conf:/etc/redis/redis.conf # 挂载redis配置文件
+    ports:
+      - "6379:6379"
+    restart: always # always表容器运行发生错误时一直重启
+
+  db:
+    image: mysql
+    env_file:  
+      - ./web-server/.env # 使用了环境变量文件
+    networks:  
+      - db_network
+    volumes:
+      - db_vol:/var/lib/mysql:rw # 挂载数据库数据, 可读可写
+      - ./compose/mysql/conf/my.cnf:/etc/mysql/my.cnf # 挂载配置文件
+      - ./compose/mysql/init:/docker-entrypoint-initdb.d/ # 挂载数据初始化sql脚本
+    ports:
+      - "3306:3306" # 与配置文件保持一致
+    restart: always
+
+  web:
+    build: ./web-server
+    expose:
+      - "8000"
+    volumes:
+      - ./web-server:/var/www/html/web-server # 挂载项目代码
+      - static_vol:/var/www/html/web-server/static # 以数据卷挂载容器内static文件
+      - media_vol:/var/www/html/web-server/upload # 以数据卷挂载容器内用户上传媒体文件
+      - ./compose/uwsgi:/tmp # 挂载uwsgi日志
+    networks:
+      - nginx_network
+      - db_network  
+      - redis_network 
+    depends_on:
+      - db
+      - redis
+    restart: always
+    tty: true
+    stdin_open: true
+
+  nginx:
+    build: ./compose/nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    expose:
+      - "80"
+    volumes:
+      - ./compose/nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf # 挂载nginx配置文件
+      - ./compose/nginx/ssl:/usr/share/nginx/ssl # 挂载ssl证书目录
+      - ./compose/nginx/log:/var/log/nginx # 挂载日志
+      - static_vol:/usr/share/nginx/html/static # 挂载静态文件
+      - media_vol:/usr/share/nginx/html/media # 挂载用户上传媒体文件
+    networks:
+      - nginx_network
+    depends_on:
+      - web
+    restart: always

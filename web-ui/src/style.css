@@ -1,0 +1,260 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  background: #f6f6f8;
+}
+
+#app {
+  height: 100%;
+  width: 100%;
+}
+
+.main {
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
+  padding-top: 45px;
+
+}
+main{
+  padding-top: 65px !important;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+
+header {
+  border-bottom: solid 1px var(--el-menu-border-color);
+  height: 45px !important;
+  padding: 0 0 !important;
+  background: white;
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+}
+.container{
+  padding-top: 45px;
+}
+h1 {
+  text-align: center;
+  font-size: 30px;
+  padding: 10px 0;
+}
+
+.card-header .card-title,
+.salary {
+  white-space: nowrap;
+  /* 禁止文本换行 */
+  overflow: hidden;
+  /* 超出部分隐藏 */
+  text-overflow: ellipsis;
+  /* 超出部分显示省略号 */
+
+
+}
+
+.card-body {
+  width: 100%
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%
+}
+
+.card-body div {
+  font-size: 14px;
+  white-space: nowrap;
+  /* 禁止文本换行 */
+  overflow: hidden;
+  /* 超出部分隐藏 */
+  text-overflow: ellipsis;
+  /* 超出部分显示省略号 */
+}
+
+.card-body .tags span {
+  margin-right: 5px
+}
+
+.salary {
+  color: #ff4700;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  bottom: 16px;
+  width: calc(100% - 40px)
+}
+
+.card-footer div {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.card-footer div {
+  white-space: nowrap;
+  /* 禁止文本换行 */
+  overflow: hidden;
+  /* 超出部分隐藏 */
+  text-overflow: ellipsis;
+  /* 超出部分显示省略号 */
+  height: 24px;
+  line-height: 24px;
+  font-size: 12px
+}
+
+.card-footer div span {
+  white-space: nowrap;
+  /* 禁止文本换行 */
+  overflow: hidden;
+  /* 超出部分隐藏 */
+  text-overflow: ellipsis;
+}
+
+.hotjob-items,
+.hotcompany-items {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  height: calc(140px * 3);
+  justify-content: flex-start;
+
+
+}
+
+.hotjob-item-bg,
+.hotcompany-item-bg,
+.hotjob-item,
+.hotcompany-item {
+  margin: 5px 5px
+}
+
+.hotjob-item-bg,
+.hotcompany-item-bg,
+.hotjob-item,
+.hotcompany-item {
+  width: calc(100% / 3.1);
+  position: relative;
+  height: calc(100% / 3.1);
+  padding: 16px 20px;
+  font-family: arial, verdana, helvetica, 'PingFang SC', 'HanHei SC', STHeitiSC-Light, Microsoft Yahei, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 26px;
+  color: #414a60;
+  font-weight: 400;
+  list-style: none;
+  box-sizing: border-box;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all .2s linear;
+  background: white;
+
+}
+
+.hotjob-item-bg:hover,
+.hotcompany-item-bg:hover,
+.hotjob-item:hover,
+.hotcompany-item:hover {
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, .12)
+}
+
+.demonstration {
+  color: var(--el-text-color-secondary);
+}
+
+.job {
+  height: 400px;
+  width: 250px;
+  position: relative;
+}
+
+.sub-items {
+  /* width: 500px; */
+  /* white-space: nowrap; */
+  /* 禁止文本换行 */
+  overflow-y: auto;
+  /* 超出部分隐藏 */
+  text-overflow: ellipsis;
+  min-width: 290px;
+  height: 400px;
+  position: absolute;
+  top: 0px;
+  left: 250px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
+  display: none;
+  padding: 15px;
+}
+
+.sub-items a {
+  color: black !important;
+}
+
+
+@media screen and (max-width: 568px) {
+
+  .main {
+    width: 100% !important;
+    /* padding: 0 !important; */
+  }
+
+  .m-hide {
+    display: none !important;
+  }
+
+  .text-center {
+    height: 200px;
+  }
+
+  .text-center .el-image__inner {
+    height: 200px;
+  }
+
+  .text-center .el-carousel__container {
+    height: 200px !important;
+  }
+
+  .hotjob-item-bg,
+  .hotcompany-item-bg,
+  .hotjob-item,
+  .hotcompany-item {
+    width: 100% !important;
+    height: calc(100% / 9.3) !important;
+  }
+
+  .hotjob-items,
+  .hotcompany-items {
+    height: calc(140px * 9) !important;
+  }
+}
+
+@media screen and (max-width: 1000px) and (min-width: 568px) {
+
+  .hotjob-item-bg,
+  .hotcompany-item-bg,
+  .hotjob-item,
+  .hotcompany-item {
+    width: calc(100% / 2.1) !important;
+    height: calc(100% / 5.2) !important;
+  }
+
+  .hotjob-items,
+  .hotcompany-items {
+    height: calc(140px * 5) !important;
+  }
+}

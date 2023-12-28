@@ -1,0 +1,35 @@
+# project/docker_env/django/DockerfileBuild
+# 建立 python3.8 环境
+FROM python:3.8.16-alpine
+ 
+# 镜像作者
+MAINTAINER FUYANG
+ 
+# 设置 python 环境变量
+ENV PYTHONUNBUFFERED 1
+ 
+# apk 镜像源配置
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
+ 
+# 设置pip源为国内源
+COPY ./web-server/pip.conf /root/.pip/pip.conf
+
+# 安装部分必要包
+RUN apk update && apk add bash bash-doc bash-completion git freetds-dev jpeg-dev linux-headers mysql-client mariadb-dev build-base libffi-dev openssl-dev zlib-dev bzip2-dev pcre-dev ncurses-dev readline-dev tk-dev postgresql-dev
+ 
+# 安装网络检查工具 ping telnet 
+RUN apk add iputils busybox-extras
+ 
+# 在容器内创建backend文件夹
+RUN mkdir -p /usr/share/server
+
+ 
+# 将当前目录文件加入到容器工作目录中（. 表示当前宿主机目录）
+COPY ./web-server /usr/share/server
+RUN python3 -m pip install --upgrade pip
+# pip安装依赖
+RUN python3 -m pip install -i https://mirrors.aliyun.com/pypi/simple/ -r /usr/share/server/requirements.txt
+
+# 启动服务命令
+CMD ["chmod +x /usr/share/server/docker_start.sh"]
+CMD ["/usr/share/server/docker_start.sh"]

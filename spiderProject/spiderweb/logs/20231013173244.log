@@ -1,0 +1,149 @@
+INFO - 2023-10-13 17:32:45,403 - process: 23572 - scheduler.py - gerapy.server.core.scheduler - 105 - scheduler - successfully synced task with jobs with force
+INFO - 2023-10-13 17:56:23,445 - process: 23572 - build.py - gerapy.server.core.build - 24 - build - successfully build project spider to egg file C:\Users\admin\Desktop\Note\毕业设计\spiderProject\spiderweb\projects\spider\spider-1.0-py3.8.egg
+INFO - 2023-10-13 18:03:37,599 - process: 23572 - build.py - gerapy.server.core.build - 24 - build - successfully build project spider to egg file C:\Users\admin\Desktop\Note\毕业设计\spiderProject\spiderweb\projects\spider\spider-1.0-py3.8.egg
+ERROR - 2023-10-13 18:03:39,049 - process: 23572 - utils.py - gerapy.server.core.utils - 564 - utils - Traceback (most recent call last):
+  File "D:\conda\envs\bishespider\lib\runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "D:\conda\envs\bishespider\lib\runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "D:\conda\envs\bishespider\lib\site-packages\scrapyd\runner.py", line 38, in <module>
+    main()
+  File "D:\conda\envs\bishespider\lib\site-packages\scrapyd\runner.py", line 34, in main
+    execute()
+  File "D:\conda\envs\bishespider\lib\site-packages\scrapy\cmdline.py", line 160, in execute
+    cmd.crawler_process = CrawlerProcess(settings)
+  File "D:\conda\envs\bishespider\lib\site-packages\scrapy\crawler.py", line 357, in __init__
+    super().__init__(settings)
+  File "D:\conda\envs\bishespider\lib\site-packages\scrapy\crawler.py", line 227, in __init__
+    self.spider_loader = self._get_spider_loader(settings)
+  File "D:\conda\envs\bishespider\lib\site-packages\scrapy\crawler.py", line 221, in _get_spider_loader
+    return loader_cls.from_settings(settings.frozencopy())
+  File "D:\conda\envs\bishespider\lib\site-packages\scrapy\spiderloader.py", line 79, in from_settings
+    return cls(settings)
+  File "D:\conda\envs\bishespider\lib\site-packages\scrapy\spiderloader.py", line 34, in __init__
+    self._load_all_spiders()
+  File "D:\conda\envs\bishespider\lib\site-packages\scrapy\spiderloader.py", line 63, in _load_all_spiders
+    for module in walk_modules(name):
+  File "D:\conda\envs\bishespider\lib\site-packages\scrapy\utils\misc.py", line 106, in walk_modules
+    submod = import_module(fullpath)
+  File "D:\conda\envs\bishespider\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 914, in _find_spec
+  File "<frozen importlib._bootstrap_external>", line 1407, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 1381, in _get_spec
+  File "<frozen importlib._bootstrap_external>", line 1362, in _legacy_get_spec
+  File "<frozen importlib._bootstrap>", line 414, in spec_from_loader
+  File "<frozen importlib._bootstrap_external>", line 709, in spec_from_file_location
+  File "<frozen zipimport>", line 191, in get_filename
+  File "<frozen zipimport>", line 713, in _get_module_code
+  File "<frozen zipimport>", line 647, in _compile_source
+  File "c:\users\admin\desktop\note\毕业设计\spiderproject\scrapyd\eggs\spider\1697191418.egg\tutorial\spiders\zhilian.py", line 49
+    self.logger.info(f'{self.city_code[self.city]}第{self.current_page}页开始爬取')
+                                                                             ^
+IndentationError: unindent does not match any outer indentation level
+Traceback (most recent call last):
+  File "D:\conda\envs\bishespider\lib\site-packages\gerapy\server\core\utils.py", line 562, in wrapper
+    result = func(*args, **kwargs)
+  File "D:\conda\envs\bishespider\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\conda\envs\bishespider\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\conda\envs\bishespider\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\conda\envs\bishespider\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\conda\envs\bishespider\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\conda\envs\bishespider\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\conda\envs\bishespider\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\conda\envs\bishespider\lib\site-packages\gerapy\server\core\views.py", line 461, in project_deploy
+    scrapyd.add_version(project_name, int(time.time()), egg_file.read())
+  File "D:\conda\envs\bishespider\lib\site-packages\scrapyd_api\wrapper.py", line 76, in add_version
+    json = self.client.post(url, data=data, files=files,
+  File "D:\conda\envs\bishespider\lib\site-packages\requests\sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+  File "D:\conda\envs\bishespider\lib\site-packages\scrapyd_api\client.py", line 38, in request
+    return self._handle_response(response)
+  File "D:\conda\envs\bishespider\lib\site-packages\scrapyd_api\client.py", line 34, in _handle_response
+    raise ScrapydResponseError(json['message'])
+scrapyd_api.exceptions.ScrapydResponseError: Traceback (most recent call last):
+  File "D:\conda\envs\bishespider\lib\runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "D:\conda\envs\bishespider\lib\runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "D:\conda\envs\bishespider\lib\site-packages\scrapyd\runner.py", line 38, in <module>
+    main()
+  File "D:\conda\envs\bishespider\lib\site-packages\scrapyd\runner.py", line 34, in main
+    execute()
+  File "D:\conda\envs\bishespider\lib\site-packages\scrapy\cmdline.py", line 160, in execute
+    cmd.crawler_process = CrawlerProcess(settings)
+  File "D:\conda\envs\bishespider\lib\site-packages\scrapy\crawler.py", line 357, in __init__
+    super().__init__(settings)
+  File "D:\conda\envs\bishespider\lib\site-packages\scrapy\crawler.py", line 227, in __init__
+    self.spider_loader = self._get_spider_loader(settings)
+  File "D:\conda\envs\bishespider\lib\site-packages\scrapy\crawler.py", line 221, in _get_spider_loader
+    return loader_cls.from_settings(settings.frozencopy())
+  File "D:\conda\envs\bishespider\lib\site-packages\scrapy\spiderloader.py", line 79, in from_settings
+    return cls(settings)
+  File "D:\conda\envs\bishespider\lib\site-packages\scrapy\spiderloader.py", line 34, in __init__
+    self._load_all_spiders()
+  File "D:\conda\envs\bishespider\lib\site-packages\scrapy\spiderloader.py", line 63, in _load_all_spiders
+    for module in walk_modules(name):
+  File "D:\conda\envs\bishespider\lib\site-packages\scrapy\utils\misc.py", line 106, in walk_modules
+    submod = import_module(fullpath)
+  File "D:\conda\envs\bishespider\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 914, in _find_spec
+  File "<frozen importlib._bootstrap_external>", line 1407, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 1381, in _get_spec
+  File "<frozen importlib._bootstrap_external>", line 1362, in _legacy_get_spec
+  File "<frozen importlib._bootstrap>", line 414, in spec_from_loader
+  File "<frozen importlib._bootstrap_external>", line 709, in spec_from_file_location
+  File "<frozen zipimport>", line 191, in get_filename
+  File "<frozen zipimport>", line 713, in _get_module_code
+  File "<frozen zipimport>", line 647, in _compile_source
+  File "c:\users\admin\desktop\note\毕业设计\spiderproject\scrapyd\eggs\spider\1697191418.egg\tutorial\spiders\zhilian.py", line 49
+    self.logger.info(f'{self.city_code[self.city]}第{self.current_page}页开始爬取')
+                                                                             ^
+IndentationError: unindent does not match any outer indentation level
+
+INFO - 2023-10-13 18:04:38,161 - process: 23572 - build.py - gerapy.server.core.build - 24 - build - successfully build project spider to egg file C:\Users\admin\Desktop\Note\毕业设计\spiderProject\spiderweb\projects\spider\spider-1.0-py3.8.egg
+INFO - 2023-10-13 18:12:19,392 - process: 23572 - build.py - gerapy.server.core.build - 24 - build - successfully build project spider to egg file C:\Users\admin\Desktop\Note\毕业设计\spiderProject\spiderweb\projects\spider\spider-1.0-py3.8.egg
+INFO - 2023-10-13 18:20:41,483 - process: 23572 - build.py - gerapy.server.core.build - 24 - build - successfully build project spider to egg file C:\Users\admin\Desktop\Note\毕业设计\spiderProject\spiderweb\projects\spider\spider-1.0-py3.8.egg
+INFO - 2023-10-13 19:14:30,643 - process: 23572 - build.py - gerapy.server.core.build - 24 - build - successfully build project spider to egg file C:\Users\admin\Desktop\Note\毕业设计\spiderProject\spiderweb\projects\spider\spider-1.0-py3.8.egg
+INFO - 2023-10-13 19:20:34,024 - process: 23572 - scheduler.py - gerapy.server.core.scheduler - 34 - scheduler - execute job of client JOB, project spider, spider spider
+INFO - 2023-10-13 19:21:20,005 - process: 23572 - scheduler.py - gerapy.server.core.scheduler - 34 - scheduler - execute job of client JOB, project spider, spider spider
+INFO - 2023-10-13 19:21:21,033 - process: 23572 - scheduler.py - gerapy.server.core.scheduler - 34 - scheduler - execute job of client JOB, project spider, spider spider
+INFO - 2023-10-13 19:21:22,032 - process: 23572 - scheduler.py - gerapy.server.core.scheduler - 34 - scheduler - execute job of client JOB, project spider, spider spider
+INFO - 2023-10-13 19:21:23,052 - process: 23572 - scheduler.py - gerapy.server.core.scheduler - 34 - scheduler - execute job of client JOB, project spider, spider spider
+INFO - 2023-10-13 19:21:24,034 - process: 23572 - scheduler.py - gerapy.server.core.scheduler - 34 - scheduler - execute job of client JOB, project spider, spider spider
+INFO - 2023-10-13 19:21:25,043 - process: 23572 - scheduler.py - gerapy.server.core.scheduler - 34 - scheduler - execute job of client JOB, project spider, spider spider
+INFO - 2023-10-13 19:21:26,046 - process: 23572 - scheduler.py - gerapy.server.core.scheduler - 34 - scheduler - execute job of client JOB, project spider, spider spider
+INFO - 2023-10-13 19:21:27,069 - process: 23572 - scheduler.py - gerapy.server.core.scheduler - 34 - scheduler - execute job of client JOB, project spider, spider spider
+INFO - 2023-10-13 19:21:28,064 - process: 23572 - scheduler.py - gerapy.server.core.scheduler - 34 - scheduler - execute job of client JOB, project spider, spider spider
+INFO - 2023-10-13 19:21:29,042 - process: 23572 - scheduler.py - gerapy.server.core.scheduler - 34 - scheduler - execute job of client JOB, project spider, spider spider
+INFO - 2023-10-13 19:21:30,061 - process: 23572 - scheduler.py - gerapy.server.core.scheduler - 34 - scheduler - execute job of client JOB, project spider, spider spider
+INFO - 2023-10-13 19:21:31,067 - process: 23572 - scheduler.py - gerapy.server.core.scheduler - 34 - scheduler - execute job of client JOB, project spider, spider spider
+INFO - 2023-10-13 19:21:32,058 - process: 23572 - scheduler.py - gerapy.server.core.scheduler - 34 - scheduler - execute job of client JOB, project spider, spider spider
+INFO - 2023-10-13 19:21:33,031 - process: 23572 - scheduler.py - gerapy.server.core.scheduler - 34 - scheduler - execute job of client JOB, project spider, spider spider
+INFO - 2023-10-13 19:21:34,044 - process: 23572 - scheduler.py - gerapy.server.core.scheduler - 34 - scheduler - execute job of client JOB, project spider, spider spider
+INFO - 2023-10-13 19:21:35,011 - process: 23572 - scheduler.py - gerapy.server.core.scheduler - 34 - scheduler - execute job of client JOB, project spider, spider spider
+INFO - 2023-10-13 19:21:36,045 - process: 23572 - scheduler.py - gerapy.server.core.scheduler - 34 - scheduler - execute job of client JOB, project spider, spider spider
+INFO - 2023-10-13 19:21:37,067 - process: 23572 - scheduler.py - gerapy.server.core.scheduler - 34 - scheduler - execute job of client JOB, project spider, spider spider
+INFO - 2023-10-13 19:21:38,038 - process: 23572 - scheduler.py - gerapy.server.core.scheduler - 34 - scheduler - execute job of client JOB, project spider, spider spider
+INFO - 2023-10-13 19:21:39,054 - process: 23572 - scheduler.py - gerapy.server.core.scheduler - 34 - scheduler - execute job of client JOB, project spider, spider spider
+INFO - 2023-10-13 19:21:40,062 - process: 23572 - scheduler.py - gerapy.server.core.scheduler - 34 - scheduler - execute job of client JOB, project spider, spider spider
+INFO - 2023-10-13 19:21:41,070 - process: 23572 - scheduler.py - gerapy.server.core.scheduler - 34 - scheduler - execute job of client JOB, project spider, spider spider
+INFO - 2023-10-13 19:21:42,044 - process: 23572 - scheduler.py - gerapy.server.core.scheduler - 34 - scheduler - execute job of client JOB, project spider, spider spider
+INFO - 2023-10-13 19:21:43,063 - process: 23572 - scheduler.py - gerapy.server.core.scheduler - 34 - scheduler - execute job of client JOB, project spider, spider spider
+INFO - 2023-10-13 19:21:44,046 - process: 23572 - scheduler.py - gerapy.server.core.scheduler - 34 - scheduler - execute job of client JOB, project spider, spider spider
+INFO - 2023-10-13 19:21:45,070 - process: 23572 - scheduler.py - gerapy.server.core.scheduler - 34 - scheduler - execute job of client JOB, project spider, spider spider
+INFO - 2023-10-13 19:21:46,051 - process: 23572 - scheduler.py - gerapy.server.core.scheduler - 34 - scheduler - execute job of client JOB, project spider, spider spider

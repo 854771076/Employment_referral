@@ -1,0 +1,17 @@
+setup.py
+spider.egg-info/PKG-INFO
+spider.egg-info/SOURCES.txt
+spider.egg-info/dependency_links.txt
+spider.egg-info/entry_points.txt
+spider.egg-info/top_level.txt
+tutorial/__init__.py
+tutorial/init_redis.py
+tutorial/items.py
+tutorial/middlewares.py
+tutorial/pipelines.py
+tutorial/settings.py
+tutorial/spiders/__init__.py
+tutorial/spiders/getredis.py
+tutorial/spiders/run.py
+tutorial/spiders/zhilian.py
+tutorial/spiders/zhilian2.py

@@ -1,0 +1,18 @@
+django
+gerapy
+cryptography==36.0.2
+pyOpenSSL==22.0.0
+fake-useragent==0.1.14
+pandas
+pymongo
+PyMySQL
+redis
+requests 
+Scrapy
+scrapyd
+scrapyd-client
+selenium
+mysql-client
+SQLAlchemy
+pywin32
+#python 3.8.5以上

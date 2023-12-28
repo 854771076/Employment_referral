@@ -1,0 +1,7 @@
+INFO - 2023-10-13 17:19:04,871 - process: 13964 - scheduler.py - gerapy.server.core.scheduler - 105 - scheduler - successfully synced task with jobs with force
+ERROR - 2023-10-13 17:19:13,505 - process: 13964 - build.py - gerapy.server.core.build - 78 - build - error occurred ('settings',)
+INFO - 2023-10-13 17:19:13,505 - process: 13964 - build.py - gerapy.server.core.build - 24 - build - successfully build project tutorial to egg file None
+ERROR - 2023-10-13 17:19:53,604 - process: 13964 - build.py - gerapy.server.core.build - 78 - build - error occurred ('settings',)
+INFO - 2023-10-13 17:19:53,604 - process: 13964 - build.py - gerapy.server.core.build - 24 - build - successfully build project tutorial to egg file None
+ERROR - 2023-10-13 17:20:58,619 - process: 13964 - build.py - gerapy.server.core.build - 78 - build - error occurred ('settings',)
+INFO - 2023-10-13 17:20:58,619 - process: 13964 - build.py - gerapy.server.core.build - 24 - build - successfully build project tutorial to egg file None

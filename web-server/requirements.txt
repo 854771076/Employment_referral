@@ -1,0 +1,11 @@
+django==3.2.5
+django-cors-headers
+djangorestframework-simplejwt
+djangorestframework
+mysqlclient==2.1.1
+django-simpleui
+redis
+captcha
+django-filter
+coreapi
+drf-yasg

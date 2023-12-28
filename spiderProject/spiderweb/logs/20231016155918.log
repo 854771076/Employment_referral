@@ -1,0 +1,3 @@
+INFO - 2023-10-16 15:59:19,804 - process: 25164 - scheduler.py - gerapy.server.core.scheduler - 105 - scheduler - successfully synced task with jobs with force
+INFO - 2023-10-16 15:59:37,006 - process: 25164 - scheduler.py - gerapy.server.core.scheduler - 34 - scheduler - execute job of client JOB, project spider, spider zhilian
+INFO - 2023-10-16 16:00:12,015 - process: 25164 - scheduler.py - gerapy.server.core.scheduler - 34 - scheduler - execute job of client JOB, project spider, spider zhilian

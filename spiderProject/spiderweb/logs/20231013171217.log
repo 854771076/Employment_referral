@@ -1,0 +1,72 @@
+INFO - 2023-10-13 17:12:18,910 - process: 12612 - scheduler.py - gerapy.server.core.scheduler - 105 - scheduler - successfully synced task with jobs with force
+ERROR - 2023-10-13 17:12:31,017 - process: 12612 - utils.py - gerapy.server.core.utils - 564 - utils - [WinError 3] 系统找不到指定的路径。: 'C:\\Users\\admin\\Desktop\\Note\\毕业设计\\spider\\spiderweb\\projects'
+Traceback (most recent call last):
+  File "D:\conda\envs\bishespider\lib\site-packages\gerapy\server\core\utils.py", line 562, in wrapper
+    result = func(*args, **kwargs)
+  File "D:\conda\envs\bishespider\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\conda\envs\bishespider\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\conda\envs\bishespider\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\conda\envs\bishespider\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\conda\envs\bishespider\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\conda\envs\bishespider\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\conda\envs\bishespider\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\conda\envs\bishespider\lib\site-packages\gerapy\server\core\views.py", line 73, in index_status
+    files = os.listdir(path)
+FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'C:\\Users\\admin\\Desktop\\Note\\毕业设计\\spider\\spiderweb\\projects'
+ERROR - 2023-10-13 17:12:35,297 - process: 12612 - utils.py - gerapy.server.core.utils - 564 - utils - [WinError 3] 系统找不到指定的路径。: 'C:\\Users\\admin\\Desktop\\Note\\毕业设计\\spider\\spiderweb\\projects'
+Traceback (most recent call last):
+  File "D:\conda\envs\bishespider\lib\site-packages\gerapy\server\core\utils.py", line 562, in wrapper
+    result = func(*args, **kwargs)
+  File "D:\conda\envs\bishespider\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\conda\envs\bishespider\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\conda\envs\bishespider\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\conda\envs\bishespider\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\conda\envs\bishespider\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\conda\envs\bishespider\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\conda\envs\bishespider\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\conda\envs\bishespider\lib\site-packages\gerapy\server\core\views.py", line 242, in project_index
+    files = os.listdir(path)
+FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'C:\\Users\\admin\\Desktop\\Note\\毕业设计\\spider\\spiderweb\\projects'
+ERROR - 2023-10-13 17:12:47,690 - process: 12612 - utils.py - gerapy.server.core.utils - 564 - utils - [WinError 3] 系统找不到指定的路径。: 'C:\\Users\\admin\\Desktop\\Note\\毕业设计\\spider\\spiderweb\\projects'
+Traceback (most recent call last):
+  File "D:\conda\envs\bishespider\lib\site-packages\gerapy\server\core\utils.py", line 562, in wrapper
+    result = func(*args, **kwargs)
+  File "D:\conda\envs\bishespider\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\conda\envs\bishespider\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\conda\envs\bishespider\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\conda\envs\bishespider\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\conda\envs\bishespider\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\conda\envs\bishespider\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\conda\envs\bishespider\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\conda\envs\bishespider\lib\site-packages\gerapy\server\core\views.py", line 242, in project_index
+    files = os.listdir(path)
+FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'C:\\Users\\admin\\Desktop\\Note\\毕业设计\\spider\\spiderweb\\projects'
+ERROR - 2023-10-13 17:13:38,961 - process: 12612 - build.py - gerapy.server.core.build - 78 - build - error occurred ('settings',)
+INFO - 2023-10-13 17:13:38,961 - process: 12612 - build.py - gerapy.server.core.build - 24 - build - successfully build project tutorial to egg file None
+ERROR - 2023-10-13 17:14:30,831 - process: 12612 - build.py - gerapy.server.core.build - 78 - build - error occurred ('settings',)
+INFO - 2023-10-13 17:14:30,831 - process: 12612 - build.py - gerapy.server.core.build - 24 - build - successfully build project tutorial to egg file None
+ERROR - 2023-10-13 17:15:24,379 - process: 12612 - build.py - gerapy.server.core.build - 78 - build - error occurred ('settings',)
+INFO - 2023-10-13 17:15:24,379 - process: 12612 - build.py - gerapy.server.core.build - 24 - build - successfully build project tutorial to egg file None
+ERROR - 2023-10-13 17:17:13,073 - process: 12612 - build.py - gerapy.server.core.build - 78 - build - error occurred ('settings',)
+INFO - 2023-10-13 17:17:13,073 - process: 12612 - build.py - gerapy.server.core.build - 24 - build - successfully build project tutorial to egg file None
