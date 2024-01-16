@@ -22,7 +22,9 @@ spark = SparkSession.builder \
     .config('spark.sql.shuffle.partitions', '200') \
     .config('spark.jars', 'hdfs:///user/cdh/jars/mysql-connector-java-5.1.49.jar') \
     .getOrCreate()
+# 使用APH层次分析法求出权重
 weights =[0.2124, 0.1711, 0.0709, 0.1368, 0.3194, 0.0236, 0.0658]
+#带权重的cos相似度
 def weighted_cos_similarity(vector1, vector2):
     # 确保向量和权重的长度相同
     assert len(vector1) == len(vector2) == len(weights), "向量和权重的长度必须相同"
@@ -37,10 +39,7 @@ def weighted_cos_similarity(vector1, vector2):
     # 计算带权重的余弦相似度
     similarity = dot_product / (norm_vector1 * norm_vector2)
     return float(similarity)
-def cos_similarity(Vector1, Vector2):
-    similarity = Vector1.dot(Vector2) / (np.linalg.norm(Vector1) * np.linalg.norm(Vector2))
-    return float(similarity)
-cos_similarity_udf = udf(cos_similarity, DoubleType())
+
 weighted_cos_similarity_udf = udf(weighted_cos_similarity, DoubleType())
 # 加载用户画像数据
 user_profile_df = spark.sql('SELECT * FROM `dwd_jobfree`.`dwd_jobfree_db_jobfree_t_resume_train`')
@@ -63,39 +62,28 @@ job_postings_df =minmax_model.transform(job_postings_df)
 minmax =MinMaxScaler(inputCol="features", outputCol="user_features_norm")
 minmax_model=minmax.fit(job_postings_df)
 user_profile_df = minmax_model.transform(user_profile_df)
-
-# # 获取用户画像向量和招聘信息特征向量的笛卡尔积
+# 获取用户画像向量和招聘信息特征向量的笛卡尔积
 cartesian_df = user_profile_df.crossJoin(job_postings_df)
-
-
-# # 计算相似度
-# cartesian_df = cartesian_df.withColumn("similarity",cos_similarity_udf(cartesian_df['user_features_norm'],cartesian_df['job_features_norm']) )
+# 计算相似度
 cartesian_df = cartesian_df.withColumn("similarity",weighted_cos_similarity_udf(cartesian_df['user_features_norm'],cartesian_df['job_features_norm']) )
-
-# # 显示相似度计算结果，可以根据需要进行进一步筛选和排序
+# 显示相似度计算结果，可以根据需要进行进一步筛选和排序
 cartesian_df.orderBy("similarity", ascending=False).show()
-
-# # 假设筛选条件为相似度大于0.9的用户-招聘信息对
+# 假设筛选条件为相似度大于0.9的用户-招聘信息对
 filtered_df = cartesian_df.filter("similarity> 0.7")
-# # 根据相似度值进行降序排序
+# 根据相似度值进行降序排序
 sorted_df = filtered_df.orderBy("similarity", ascending=False)
-
 from pyspark.ml.recommendation import ALS
 rating_matrix_df=sorted_df.selectExpr('user_id','job_id','similarity')
 rating_matrix_df.show()
 # 创建ALS模型实例
 als = ALS(userCol="user_id", itemCol="job_id", ratingCol="similarity", coldStartStrategy="drop",implicitPrefs=True,maxIter=10,regParam=0.01)
-
 # 拆分数据集为训练集和测试集
 (training_data, test_data) = rating_matrix_df.randomSplit([0.8, 0.2])
-
 # 训练ALS模型
 model = als.fit(training_data)
-
 from pyspark.ml.evaluation import RegressionEvaluator
 # 使用测试集评估模型
 predictions = model.transform(test_data)
-
 # 创建 RegressionEvaluator 评估器
 evaluator = RegressionEvaluator(labelCol="similarity", predictionCol="prediction", metricName="rmse")
 # 计算 RMSE
