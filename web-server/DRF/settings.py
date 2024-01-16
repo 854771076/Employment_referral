@@ -66,8 +66,8 @@ else:
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'jobfree',  #recruit_info
         'USER': 'root',  # os.environ.get('DJANGO_MYSQL_USER')
-        'PASSWORD': 'root',  # os.environ.get('DJANGO_MYSQL_PASSWORD')
-        'HOST': '127.0.0.1',  # os.environ.get('DJANGO_MYSQL_HOST')
+        'PASSWORD': 'fiang123',  # os.environ.get('DJANGO_MYSQL_PASSWORD')
+        'HOST': 'db',  # os.environ.get('DJANGO_MYSQL_HOST')
         'PORT': 3306,
         'OPTIONS': {'charset': 'utf8mb4'},
     },
@@ -282,7 +282,7 @@ EMAIL_HOST_PASSWORD = ''  # 邮箱密码
 # EMAIL_USE_TLS = True  # 使用TLS加密
 DEFAULT_FROM_EMAIL = ''  # 默认发件人邮箱
 #redis
-REDIS_HOST='127.0.0.1'
+REDIS_HOST='redis'
 REDIS_PORT=6379
 REDIS_PSW=''
 REDIS_DB=1

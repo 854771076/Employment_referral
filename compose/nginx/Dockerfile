@@ -14,7 +14,7 @@ RUN chown -R www-data:www-data /usr/share/nginx/html/media \
 && chmod -R 775 /usr/share/nginx/html/media
 
 # 添加配置文件
-ADD ./my.conf /etc/nginx/conf.d/
+ADD ./nginx.conf /etc/nginx/conf.d/
 
 # 关闭守护模式
 CMD ["nginx", "-g", "daemon off;"]

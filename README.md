@@ -43,14 +43,14 @@
 ```sh
 # docker build
 cd 项目目录/
-docker build -f ./docker_env/django/DockerfileBuild -t django_docker_img:v1 .
+docker build -f ./compose/django/DockerfileBuild -t django_docker_img:v1 .
 # 镜像保存
 docker save -o django_docker_img.tar django_docker_img:v1
 
 # docker build
 # 进项目目录
 cd project/
-docker build -f ./docker_env/web/DockerfileBuild -t vue_web_img:v1 .
+docker build -f ./compose/web/DockerfileBuild -t vue_web_img:v1 .
 # 镜像保存
 docker save -o vue_web_img.tar vue_web_img:v1
 # 加载离线镜像
