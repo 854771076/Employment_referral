@@ -39,30 +39,78 @@
 
 ### 五、项目部署
 
-### 5.1 docker-compose部署(暂时不能用，有懂的可以帮忙完善)
+### 5.1 docker-compose部署
 
-```sh
-# docker build
-cd 项目目录/
-docker build -f ./compose/django/DockerfileBuild -t django_docker_img:v1 .
-# 镜像保存
-docker save -o django_docker_img.tar django_docker_img:v1
+#### 5.1.1 docker安装
 
-# docker build
-# 进项目目录
-cd project/
-docker build -f ./compose/web/DockerfileBuild -t vue_web_img:v1 .
-# 镜像保存
-docker save -o vue_web_img.tar vue_web_img:v1
-# 加载离线镜像
-docker load -i django_docker_img.tar
-docker load -i vue_web_img.tar
- 
- 
+1. **安装 yum-utils**
+
+   ```sh
+   sudo yum install -y yum-utils device-mapper-persistent-data lvm
+   ```
+
+2. **添加 Docker 的 Yum 源**
+
+   ```sh
+   sudo yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+   ```
+
+3. **更新 Yum 包的索引**
+
+   ```sh
+   sudo yum makecache fast
+   ```
+
+4. **安装最新版本的 Docker**
+
+   ```sh
+   sudo yum install docker-ce
+   ```
+
+5. **启动 Docker**
+
+   ```sh
+   sudo systemctl start docker
+   sudo systemctl enable docker
+   ```
+
+6. **查看版本**
+
+   ```sh
+   docker version
+   ```
+
+#### 5.1.2 docker-compose安装
+
+1. **yum源安装**
+
+   ```sh
+   yum -y install docker-compose
+   ```
+
+2. **官网安装**
+
+   ```
+   sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+   sudo chmod +x /usr/local/bin/docker-compose
+   ```
+
+3. **查看版本**
+
+   ```sh
+   docker-compose --version
+   ```
+
+#### 5.1.3 项目部署
+```sh 
 # docker-compose 创建并启动相应服务
 cd 项目目录/
 docker-compose up -d
 ```
+#### 5.1.4 进入系统
+> 将数据库数据导入数据库后打开连接
+> http://虚拟机ip
+无数据联系作者
 
 ### 5.2 环境初始化
 
