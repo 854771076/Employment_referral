@@ -3,3 +3,4 @@
 spiderProject/scrapyd/logs/spider/zhilian/*.log
 spiderProject/scrapyd/logs/spider/zhilian2/*.log
 
+web-server/api/__pycache__/*.pyc
