@@ -1,0 +1,305 @@
+INFO - 2024-03-01 15:28:41,157 - process: 26028 - scheduler.py - gerapy.server.core.scheduler - 105 - scheduler - successfully synced task with jobs with force
+INFO - 2024-03-01 15:29:31,194 - process: 26028 - build.py - gerapy.server.core.build - 24 - build - successfully build project spider to egg file C:\Users\Administrator\Desktop\Employment_referral\spiderProject\spiderweb\projects\spider\spider-1.0-py3.8.egg
+ERROR - 2024-03-01 15:29:32,789 - process: 26028 - utils.py - gerapy.server.core.utils - 564 - utils - Traceback (most recent call last):
+  File "D:\conda\envs\jobfreeSpider\lib\runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "D:\conda\envs\jobfreeSpider\lib\runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapyd\runner.py", line 38, in <module>
+    main()
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapyd\runner.py", line 34, in main
+    execute()
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\cmdline.py", line 160, in execute
+    cmd.crawler_process = CrawlerProcess(settings)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\crawler.py", line 357, in __init__
+    super().__init__(settings)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\crawler.py", line 227, in __init__
+    self.spider_loader = self._get_spider_loader(settings)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\crawler.py", line 221, in _get_spider_loader
+    return loader_cls.from_settings(settings.frozencopy())
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\spiderloader.py", line 79, in from_settings
+    return cls(settings)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\spiderloader.py", line 34, in __init__
+    self._load_all_spiders()
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\spiderloader.py", line 63, in _load_all_spiders
+    for module in walk_modules(name):
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\utils\misc.py", line 106, in walk_modules
+    submod = import_module(fullpath)
+  File "D:\conda\envs\jobfreeSpider\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 655, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 618, in _load_backward_compatible
+  File "<frozen zipimport>", line 259, in load_module
+  File "c:\users\administrator\desktop\employment_referral\spiderproject\scrapyd\eggs\spider\1709278171.egg\tutorial\spiders\zhilian.py", line 15, in <module>
+  File "c:\users\administrator\desktop\employment_referral\spiderproject\scrapyd\eggs\spider\1709278171.egg\tutorial\spiders\zhilian.py", line 21, in TestSpider
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'NoneType'
+Traceback (most recent call last):
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\gerapy\server\core\utils.py", line 562, in wrapper
+    result = func(*args, **kwargs)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\gerapy\server\core\views.py", line 461, in project_deploy
+    scrapyd.add_version(project_name, int(time.time()), egg_file.read())
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapyd_api\wrapper.py", line 76, in add_version
+    json = self.client.post(url, data=data, files=files,
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\requests\sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapyd_api\client.py", line 38, in request
+    return self._handle_response(response)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapyd_api\client.py", line 34, in _handle_response
+    raise ScrapydResponseError(json['message'])
+scrapyd_api.exceptions.ScrapydResponseError: Traceback (most recent call last):
+  File "D:\conda\envs\jobfreeSpider\lib\runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "D:\conda\envs\jobfreeSpider\lib\runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapyd\runner.py", line 38, in <module>
+    main()
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapyd\runner.py", line 34, in main
+    execute()
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\cmdline.py", line 160, in execute
+    cmd.crawler_process = CrawlerProcess(settings)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\crawler.py", line 357, in __init__
+    super().__init__(settings)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\crawler.py", line 227, in __init__
+    self.spider_loader = self._get_spider_loader(settings)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\crawler.py", line 221, in _get_spider_loader
+    return loader_cls.from_settings(settings.frozencopy())
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\spiderloader.py", line 79, in from_settings
+    return cls(settings)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\spiderloader.py", line 34, in __init__
+    self._load_all_spiders()
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\spiderloader.py", line 63, in _load_all_spiders
+    for module in walk_modules(name):
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\utils\misc.py", line 106, in walk_modules
+    submod = import_module(fullpath)
+  File "D:\conda\envs\jobfreeSpider\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 655, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 618, in _load_backward_compatible
+  File "<frozen zipimport>", line 259, in load_module
+  File "c:\users\administrator\desktop\employment_referral\spiderproject\scrapyd\eggs\spider\1709278171.egg\tutorial\spiders\zhilian.py", line 15, in <module>
+  File "c:\users\administrator\desktop\employment_referral\spiderproject\scrapyd\eggs\spider\1709278171.egg\tutorial\spiders\zhilian.py", line 21, in TestSpider
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'NoneType'
+
+INFO - 2024-03-01 15:30:02,474 - process: 26028 - build.py - gerapy.server.core.build - 24 - build - successfully build project spider to egg file C:\Users\Administrator\Desktop\Employment_referral\spiderProject\spiderweb\projects\spider\spider-1.0-py3.8.egg
+ERROR - 2024-03-01 15:30:03,967 - process: 26028 - utils.py - gerapy.server.core.utils - 564 - utils - Traceback (most recent call last):
+  File "D:\conda\envs\jobfreeSpider\lib\runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "D:\conda\envs\jobfreeSpider\lib\runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapyd\runner.py", line 38, in <module>
+    main()
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapyd\runner.py", line 34, in main
+    execute()
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\cmdline.py", line 160, in execute
+    cmd.crawler_process = CrawlerProcess(settings)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\crawler.py", line 357, in __init__
+    super().__init__(settings)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\crawler.py", line 227, in __init__
+    self.spider_loader = self._get_spider_loader(settings)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\crawler.py", line 221, in _get_spider_loader
+    return loader_cls.from_settings(settings.frozencopy())
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\spiderloader.py", line 79, in from_settings
+    return cls(settings)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\spiderloader.py", line 34, in __init__
+    self._load_all_spiders()
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\spiderloader.py", line 63, in _load_all_spiders
+    for module in walk_modules(name):
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\utils\misc.py", line 106, in walk_modules
+    submod = import_module(fullpath)
+  File "D:\conda\envs\jobfreeSpider\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 655, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 618, in _load_backward_compatible
+  File "<frozen zipimport>", line 259, in load_module
+  File "c:\users\administrator\desktop\employment_referral\spiderproject\scrapyd\eggs\spider\1709278202.egg\tutorial\spiders\zhilian.py", line 15, in <module>
+  File "c:\users\administrator\desktop\employment_referral\spiderproject\scrapyd\eggs\spider\1709278202.egg\tutorial\spiders\zhilian.py", line 21, in TestSpider
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'NoneType'
+Traceback (most recent call last):
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\gerapy\server\core\utils.py", line 562, in wrapper
+    result = func(*args, **kwargs)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\gerapy\server\core\views.py", line 461, in project_deploy
+    scrapyd.add_version(project_name, int(time.time()), egg_file.read())
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapyd_api\wrapper.py", line 76, in add_version
+    json = self.client.post(url, data=data, files=files,
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\requests\sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapyd_api\client.py", line 38, in request
+    return self._handle_response(response)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapyd_api\client.py", line 34, in _handle_response
+    raise ScrapydResponseError(json['message'])
+scrapyd_api.exceptions.ScrapydResponseError: Traceback (most recent call last):
+  File "D:\conda\envs\jobfreeSpider\lib\runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "D:\conda\envs\jobfreeSpider\lib\runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapyd\runner.py", line 38, in <module>
+    main()
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapyd\runner.py", line 34, in main
+    execute()
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\cmdline.py", line 160, in execute
+    cmd.crawler_process = CrawlerProcess(settings)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\crawler.py", line 357, in __init__
+    super().__init__(settings)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\crawler.py", line 227, in __init__
+    self.spider_loader = self._get_spider_loader(settings)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\crawler.py", line 221, in _get_spider_loader
+    return loader_cls.from_settings(settings.frozencopy())
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\spiderloader.py", line 79, in from_settings
+    return cls(settings)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\spiderloader.py", line 34, in __init__
+    self._load_all_spiders()
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\spiderloader.py", line 63, in _load_all_spiders
+    for module in walk_modules(name):
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\utils\misc.py", line 106, in walk_modules
+    submod = import_module(fullpath)
+  File "D:\conda\envs\jobfreeSpider\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 655, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 618, in _load_backward_compatible
+  File "<frozen zipimport>", line 259, in load_module
+  File "c:\users\administrator\desktop\employment_referral\spiderproject\scrapyd\eggs\spider\1709278202.egg\tutorial\spiders\zhilian.py", line 15, in <module>
+  File "c:\users\administrator\desktop\employment_referral\spiderproject\scrapyd\eggs\spider\1709278202.egg\tutorial\spiders\zhilian.py", line 21, in TestSpider
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'NoneType'
+
+INFO - 2024-03-01 15:30:35,141 - process: 26028 - build.py - gerapy.server.core.build - 24 - build - successfully build project spider to egg file C:\Users\Administrator\Desktop\Employment_referral\spiderProject\spiderweb\projects\spider\spider-1.0-py3.8.egg
+ERROR - 2024-03-01 15:30:36,533 - process: 26028 - utils.py - gerapy.server.core.utils - 564 - utils - Traceback (most recent call last):
+  File "D:\conda\envs\jobfreeSpider\lib\runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "D:\conda\envs\jobfreeSpider\lib\runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapyd\runner.py", line 38, in <module>
+    main()
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapyd\runner.py", line 34, in main
+    execute()
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\cmdline.py", line 160, in execute
+    cmd.crawler_process = CrawlerProcess(settings)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\crawler.py", line 357, in __init__
+    super().__init__(settings)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\crawler.py", line 227, in __init__
+    self.spider_loader = self._get_spider_loader(settings)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\crawler.py", line 221, in _get_spider_loader
+    return loader_cls.from_settings(settings.frozencopy())
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\spiderloader.py", line 79, in from_settings
+    return cls(settings)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\spiderloader.py", line 34, in __init__
+    self._load_all_spiders()
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\spiderloader.py", line 63, in _load_all_spiders
+    for module in walk_modules(name):
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\utils\misc.py", line 106, in walk_modules
+    submod = import_module(fullpath)
+  File "D:\conda\envs\jobfreeSpider\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 655, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 618, in _load_backward_compatible
+  File "<frozen zipimport>", line 259, in load_module
+  File "c:\users\administrator\desktop\employment_referral\spiderproject\scrapyd\eggs\spider\1709278235.egg\tutorial\spiders\zhilian.py", line 15, in <module>
+  File "c:\users\administrator\desktop\employment_referral\spiderproject\scrapyd\eggs\spider\1709278235.egg\tutorial\spiders\zhilian.py", line 21, in TestSpider
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'NoneType'
+Traceback (most recent call last):
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\gerapy\server\core\utils.py", line 562, in wrapper
+    result = func(*args, **kwargs)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\gerapy\server\core\views.py", line 461, in project_deploy
+    scrapyd.add_version(project_name, int(time.time()), egg_file.read())
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapyd_api\wrapper.py", line 76, in add_version
+    json = self.client.post(url, data=data, files=files,
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\requests\sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapyd_api\client.py", line 38, in request
+    return self._handle_response(response)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapyd_api\client.py", line 34, in _handle_response
+    raise ScrapydResponseError(json['message'])
+scrapyd_api.exceptions.ScrapydResponseError: Traceback (most recent call last):
+  File "D:\conda\envs\jobfreeSpider\lib\runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "D:\conda\envs\jobfreeSpider\lib\runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapyd\runner.py", line 38, in <module>
+    main()
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapyd\runner.py", line 34, in main
+    execute()
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\cmdline.py", line 160, in execute
+    cmd.crawler_process = CrawlerProcess(settings)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\crawler.py", line 357, in __init__
+    super().__init__(settings)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\crawler.py", line 227, in __init__
+    self.spider_loader = self._get_spider_loader(settings)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\crawler.py", line 221, in _get_spider_loader
+    return loader_cls.from_settings(settings.frozencopy())
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\spiderloader.py", line 79, in from_settings
+    return cls(settings)
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\spiderloader.py", line 34, in __init__
+    self._load_all_spiders()
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\spiderloader.py", line 63, in _load_all_spiders
+    for module in walk_modules(name):
+  File "D:\conda\envs\jobfreeSpider\lib\site-packages\scrapy\utils\misc.py", line 106, in walk_modules
+    submod = import_module(fullpath)
+  File "D:\conda\envs\jobfreeSpider\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 655, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 618, in _load_backward_compatible
+  File "<frozen zipimport>", line 259, in load_module
+  File "c:\users\administrator\desktop\employment_referral\spiderproject\scrapyd\eggs\spider\1709278235.egg\tutorial\spiders\zhilian.py", line 15, in <module>
+  File "c:\users\administrator\desktop\employment_referral\spiderproject\scrapyd\eggs\spider\1709278235.egg\tutorial\spiders\zhilian.py", line 21, in TestSpider
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'NoneType'
+
+INFO - 2024-03-01 15:30:59,864 - process: 26028 - build.py - gerapy.server.core.build - 24 - build - successfully build project spider to egg file C:\Users\Administrator\Desktop\Employment_referral\spiderProject\spiderweb\projects\spider\spider-1.0-py3.8.egg

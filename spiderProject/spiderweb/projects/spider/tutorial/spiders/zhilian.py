@@ -18,13 +18,17 @@ class TestSpider(scrapy.Spider):
     r=getRedisConnection()
     #地区码
     city_code=['530', '531', '532', '533', '534', '535', '536', '537', '538', '539', '540', '541', '542', '543', '544', '545', '546', '547', '548', '549', '550', '551', '552', '553', '554', '555', '556', '557', '558', '559', '560','562;561;563']
+    init=r.get('zhilian_init')
+    if not init:
+        init_redis_zhilian()
+        r.set('zhilian_init','true')
     current_page = int(r.get('zhilian_current_page'))
+    
     city=int(r.get('zhilian_city'))
     if city>=30:
             r.set('zhilian_city',0)
             r.set('zhilian_current_page',0)
             city=0
-    init=r.get('zhilian_init')
     time=''
     start_urls = [
         f"https://xiaoyuan.zhaopin.com/api/sou?S_SOU_POSITION_SOURCE_TYPE=2&pageIndex={current_page }&S_SOU_POSITION_TYPE=2&S_SOU_WORK_CITY={city_code[city]}&S_SOU_REFRESH_DATE={time}&order=16&pageSize=90&_v=0.04618468&at=d76f0a24dcb044c98368beac70cfd2ee&rt=4afe00e73c0f4df390d3b89ba47188a7&x-zp-page-request-id=01509dc90ff040959ec1abe618c5583f-1659171749530-563316&x-zp-client-id=95f89d20-e65a-4a55-83e5-775013f626c9"
@@ -41,9 +45,7 @@ class TestSpider(scrapy.Spider):
     }
     setkey = 'positionIds_zhilian'
     citylen=31
-    if not init:
-        init_redis_zhilian()
-        r.set('zhilian_init','true')
+    
     def parse(self, response):
         try:
             

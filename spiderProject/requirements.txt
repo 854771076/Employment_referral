@@ -15,4 +15,5 @@ selenium
 mysql-client
 SQLAlchemy
 pywin32
+pymongo
 #python 3.8.5以上
