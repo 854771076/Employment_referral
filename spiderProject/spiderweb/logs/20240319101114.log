@@ -1,0 +1,3 @@
+INFO - 2024-03-19 10:11:16,393 - process: 19856 - scheduler.py - gerapy.server.core.scheduler - 105 - scheduler - successfully synced task with jobs with force
+INFO - 2024-03-19 10:11:57,263 - process: 19856 - build.py - gerapy.server.core.build - 24 - build - successfully build project spider to egg file C:\Users\Administrator\Desktop\Employment_referral\spiderProject\spiderweb\projects\spider\spider-1.0-py3.8.egg
+INFO - 2024-03-19 10:12:01,154 - process: 19856 - build.py - gerapy.server.core.build - 24 - build - successfully build project spider to egg file C:\Users\Administrator\Desktop\Employment_referral\spiderProject\spiderweb\projects\spider\spider-1.0-py3.8.egg

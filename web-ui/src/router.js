@@ -7,6 +7,7 @@ import JobDetail from './components/detail/JobDetail.vue'
 import CompanyDetail from './components/detail/CompanyDetail.vue'
 import Stars from './components/sublist/Stars.vue'
 import History from './components/sublist/History.vue'
+import BigView from './components/sublist/BigView.vue'
 
 // 创建路由对象
 const router = createRouter({
@@ -21,6 +22,7 @@ const router = createRouter({
     { path: '/resume', name:'简历',component: Resume },
     { path: '/star', name:'收藏',component: Stars },
     { path: '/history', name:'浏览',component: History },
+    { path: '/bigview', name:'大屏',component: BigView },
     { path: '/job/detail/:number', name:'职位详细',component: JobDetail  },
     { path: '/company/detail/:number', name:'企业详细',component:CompanyDetail },
   ],

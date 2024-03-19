@@ -12,6 +12,7 @@ urlpatterns = [
     path('star', VueAppView.as_view()),
     path('history', VueAppView.as_view()),
     path('mine', VueAppView.as_view()),
+    path('bigview', VueAppView.as_view()),
     path('resume', VueAppView.as_view()),
     re_path('job/detail/*', VueAppView.as_view()),
     re_path('company/detail/*', VueAppView.as_view()),

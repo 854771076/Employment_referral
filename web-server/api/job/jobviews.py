@@ -13,7 +13,7 @@ from django.db.models.functions import *
 from rest_framework import permissions
 from rest_framework.response import Response
 import random
-
+import calendar
 from rest_framework import generics
 from django.db.models import Q
 
@@ -447,3 +447,48 @@ class JobsViewSet(viewsets.ModelViewSet):
 			data['code']='-1'
 			data['msg']=serializer.errors
 		return Response(data)
+	
+
+	@action(detail=False, methods=['GET'])	
+	def bigdata_info(self, request):
+		
+
+		queryset = self.filter_queryset(self.get_queryset())
+		data={}
+		data['count']=company.objects.aggregate(sum=Count('companyid')).values() 
+		data['total']=queryset.aggregate(sum=Count('id')).values() 
+		return Response({'msg':'OK','code':'200','data':data})
+	@action(detail=False, methods=['GET'])	
+	def education_info(self, request):
+		
+
+
+		queryset = self.filter_queryset(self.get_queryset())
+		total=queryset.aggregate(sum=Avg('salary_min')).values() 
+		data=queryset.filter(salary_min__gt=0).values('education').annotate(name=F('education'),sum=Avg('salary_min')).order_by('-sum')[:5]
+		return Response({'msg':'OK','code':'200','data':data,'total':total})
+	
+	@action(detail=False, methods=['GET'])	
+	def worktype_info(self, request):
+
+
+		queryset = self.filter_queryset(self.get_queryset())
+		data=queryset.values('worktype').annotate(name=F('worktype'),value=Count('id')).order_by('-value')[:10]
+		return Response({'msg':'OK','code':'200','data':data})
+	@action(detail=False, methods=['GET'])	
+	def property_info(self, request):
+		
+
+
+		queryset = self.filter_queryset(self.get_queryset())
+		total=queryset.aggregate(sum=Avg('salary_min')).values() 
+		data=queryset.filter(salary_min__gt=0).values('property').annotate(name=F('property'),sum=Avg('salary_min')).order_by('-sum')[:10]
+		return Response({'msg':'OK','code':'200','data':data,'total':total})
+	
+	@action(detail=False, methods=['GET'])	
+	def workcity_info(self, request):
+
+
+		queryset = self.filter_queryset(self.get_queryset())
+		data=queryset.filter(salary_min__gt=0).values('workcity').annotate(name=F('workcity'),value=Sum('salary_min')).order_by('-value')[:10]
+		return Response({'msg':'OK','code':'200','data':data})

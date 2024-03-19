@@ -69,6 +69,16 @@
                 <i class="fa-solid fa-chevron-up fa-rotate-90"></i>
 
             </a>
+            <a href="javascript:;" @click="bigdata">
+                <span>
+                    <el-icon style="margin-right: 10px;">
+                        <User />
+                    </el-icon>
+                    <i>分析大屏</i>
+                </span>
+                <i class="fa-solid fa-data fa-rotate-90"></i>
+
+            </a>
             <a href="#">
                 <span>
                     <el-icon style="margin-right: 10px;"><Service /></el-icon>
@@ -96,6 +106,9 @@ export default {
     name: 'Mine',
 
     methods: {
+        bigdata(){
+            this.$router.push({ path: '/bigview' })
+        },
         logout() {
             sessionStorage.clear()
             localStorage.clear()

@@ -8,8 +8,9 @@ import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 import { ElLoading } from 'element-plus'
 import * as Elicons from "@element-plus/icons-vue";
+import * as echarts from 'echarts'
 const app = createApp(App)
-const method='dev'
+const method='de'
 if(method=='dev'){
     const com = '127.0.0.1:8000'
     axios.defaults.baseURL = '//127.0.0.1:8000'
@@ -20,7 +21,7 @@ if(method=='dev'){
     app.config.globalProperties.$ApiBaseUrl=''
 }
 app.use(ElementPlus)
-
+app.config.globalProperties.$echarts = echarts
 app.config.globalProperties.$Message=ElMessage
 app.config.globalProperties.$Loading=ElLoading.service
 for (const name in Elicons) {
