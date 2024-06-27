@@ -1,0 +1,7 @@
+INFO - 2024-05-16 17:28:43,002 - process: 35080 - scheduler.py - gerapy.server.core.scheduler - 105 - scheduler - successfully synced task with jobs with force
+INFO - 2024-05-18 00:00:00,081 - process: 35080 - scheduler.py - gerapy.server.core.scheduler - 34 - scheduler - execute job of client JOB, project spider, spider zhilian
+INFO - 2024-05-18 00:00:00,095 - process: 35080 - scheduler.py - gerapy.server.core.scheduler - 34 - scheduler - execute job of client JOB, project spider, spider zhilian2
+INFO - 2024-05-19 00:00:00,072 - process: 35080 - scheduler.py - gerapy.server.core.scheduler - 34 - scheduler - execute job of client JOB, project spider, spider zhilian
+INFO - 2024-05-19 00:00:00,093 - process: 35080 - scheduler.py - gerapy.server.core.scheduler - 34 - scheduler - execute job of client JOB, project spider, spider zhilian2
+INFO - 2024-05-20 00:00:00,074 - process: 35080 - scheduler.py - gerapy.server.core.scheduler - 34 - scheduler - execute job of client JOB, project spider, spider zhilian
+INFO - 2024-05-20 00:00:00,093 - process: 35080 - scheduler.py - gerapy.server.core.scheduler - 34 - scheduler - execute job of client JOB, project spider, spider zhilian2

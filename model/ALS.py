@@ -25,7 +25,7 @@ spark = SparkSession.builder \
 # 使用APH层次分析法求出权重
 weights =[0.2124, 0.1711, 0.0709, 0.1368, 0.3194, 0.0236, 0.0658]
 #带权重的cos相似度
-def weighted_cos_similarity(vector1, vector2):
+def weighted_cos_similarity(vector1, vector2,weights):
     # 确保向量和权重的长度相同
     assert len(vector1) == len(vector2) == len(weights), "向量和权重的长度必须相同"
     # 计算向量每个元素乘以对应权重后的加权向量

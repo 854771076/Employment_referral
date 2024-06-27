@@ -48,12 +48,9 @@ class TestSpider(scrapy.Spider):
     
     def parse(self, response):
         try:
-            
             self.logger.info(f'{self.city_code[self.city]}第{self.current_page}页开始爬取')
             items = json.loads(response.text).get('data').get('data')
-            #计算总共有多少页
             maxpage=ceil(items['count']/90)
-            #maxpage=maxpage if maxpage<=2 else 2
             items = items['list']
             for index,item in enumerate(items) :
                 if (self.r.sadd(self.setkey,item['number'])) == 1:
@@ -65,12 +62,11 @@ class TestSpider(scrapy.Spider):
                     if self.city!=self.citylen:
                         self.city+=1
                         self.current_page=0
-                        self.r.set('zhilian_city',self.city)
-                        self.r.set('zhilian_current_page',self.current_page)
+                        self.r.set('zhilian_city',self.city,1000*60*60*24)
+                        self.r.set('zhilian_current_page',self.current_page,1000*60*60*24)
             if self.current_page<maxpage or maxpage==1:
                 self.current_page+=1
                 self.r.set('zhilian_current_page',self.current_page)
-                
                 yield Request(f'https://xiaoyuan.zhaopin.com/api/sou?S_SOU_POSITION_SOURCE_TYPE=2&pageIndex={self.current_page }&S_SOU_POSITION_TYPE=2&S_SOU_WORK_CITY={self.city_code[self.city]}&S_SOU_REFRESH_DATE={self.time}&order=16&pageSize=90&_v=0.04618468&at=d76f0a24dcb044c98368beac70cfd2ee&rt=4afe00e73c0f4df390d3b89ba47188a7&x-zp-page-request-id=01509dc90ff040959ec1abe618c5583f-1659171749530-563316&x-zp-client-id=95f89d20-e65a-4a55-83e5-775013f626c9',callback=self.parse,dont_filter=True)
         except Exception as e:
             self.logger.logger.warning(e)

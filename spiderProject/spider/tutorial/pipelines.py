@@ -11,9 +11,6 @@ from datetime import datetime
 settings = get_project_settings()
 class MysqlDB():
     def __init__(self,user=settings.get('MYSQL_USER'),password=settings.get('MYSQL_PASSWD'),host=settings.get('MYSQL_HOST'),port=settings.get('MYSQL_PORT'),charset='utf8',db=settings.get('MYSQL_DBNAME'),**params):
-        '''
-        user='spider',password='Rb7snZyNsf3mS6GR',host='124.223.62.222',port=3306,charset='utf8',db='spider'
-        '''
         from sqlalchemy import create_engine
         self.conn=create_engine(f'mysql+pymysql://{user}:{password}@{host}:{port}/{db}?charset={charset}',echo=False)
     def save(self,val,table:str,columns=None,method:str='append'):

@@ -19,11 +19,9 @@ from django.db.models import Q
 
 class SimilarJobsList(generics.ListAPIView):
 	serializer_class = JobsSerializer
-
 	def get_queryset(self):
 		number = self.kwargs.get('number')
 		job = Jobs.objects.get(number=number)
-
 		query = (
 			Q(industryname=job.industryname) &
 			Q(education=job.education) &
@@ -33,7 +31,6 @@ class SimilarJobsList(generics.ListAPIView):
 			Q(salary_min__lte=job.salary_min) &
 			Q(salary_max__gte=job.salary_max)
 		)
-
 		similar_jobs = Jobs.objects.filter(query).exclude(number=number)
 		return similar_jobs
 
