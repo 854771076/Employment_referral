@@ -66,8 +66,8 @@ else:
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'jobfree',  #recruit_info
         'USER': 'root',  # os.environ.get('DJANGO_MYSQL_USER')
-        'PASSWORD': '123456',  # os.environ.get('DJANGO_MYSQL_PASSWORD')
-        'HOST': '127.0.0.1',  # os.environ.get('DJANGO_MYSQL_HOST')
+        'PASSWORD': 'fiang123',  # os.environ.get('DJANGO_MYSQL_PASSWORD')
+        'HOST': 'mysql',  # os.environ.get('DJANGO_MYSQL_HOST')
         'PORT': 3306,
         'OPTIONS': {'charset': 'utf8mb4'},
     },
